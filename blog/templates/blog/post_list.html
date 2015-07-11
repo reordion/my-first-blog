@@ -6,9 +6,13 @@
 		<div>
 			<h2><a href=""><strong> Blog </strong></a></h2>
 		</div>
-		<div>
-			<h2><a href=""> Rozdział 1 </a></h2>
-		</div>
-		<ul><li>first chapter</li><li>second chapter</li></ul>
+		{% for post in posts %}
+			<div>
+				<p>published: {{ post.published_date }}</p>
+				<h1><a href="">{{ post.title }}</a></h1>
+				<p>{{ post.text|linebreaks }}</p>
+			</div>
+			
+		{% endfor %}
 	</body>
 </html>
